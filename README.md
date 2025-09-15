@@ -98,7 +98,7 @@ The_Engineers/
 ## Screenshots
 
 ## Screenshots
-![Gradio UI](screenshots-ui.png)
+![Gradio UI](screenshots/screenshots-ui.png)
 
 ## CrewAI Agents
 
