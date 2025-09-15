@@ -1,5 +1,5 @@
 [project]
-name = "the_ngineers"
+name = "the_engineers"
 version = "0.1.0"
 description = "The-Engineers using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
