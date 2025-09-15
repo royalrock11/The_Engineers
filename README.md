@@ -1,55 +1,135 @@
-# TheEngineers Crew
+Welcome to the **Trading Account Management System**, a Python-based project built using **CrewAI**, a framework that orchestrates a team of AI agents to collaboratively develop software. This project simulates a stock trading account, allowing users to create accounts, deposit/withdraw funds, buy/sell shares, and track portfolio performance through a sleek Gradio-based web interface. It showcases how AI agents can act as an engineering team, handling everything from design to implementation and testing.
 
-Welcome to the TheEngineers Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+## Project Overview
+
+This project demonstrates the power of **CrewAI** by simulating a development team consisting of:
+- **Engineering Lead**: Designs the system with detailed function and method signatures.
+- **Backend Engineer**: Implements a self-contained Python module (`accounts.py`) based on the design.
+- **Frontend Engineer**: Builds a user-friendly Gradio UI (`app.py`) to interact with the backend.
+- **Test Engineer**: Writes comprehensive unit tests (`test_accounts.py`) to ensure reliability.
+
+The result is a fully functional trading account management system with the following features:
+- Create a user account with an initial deposit.
+- Deposit and withdraw funds with balance validation.
+- Buy and sell shares of predefined stocks (AAPL, TSLA, GOOGL) using a mock pricing system.
+- View portfolio holdings, total portfolio value, profit/loss, and transaction history.
+- A clean, tab-based Gradio UI for intuitive interaction.
+- Robust unit tests to validate backend functionality.
+
+## Why CrewAI?
+
+This project highlights the strength of **CrewAI** in coordinating multiple LLM-powered agents to mimic a real-world software development team. Each agent has a defined role, goal, and backstory, ensuring clear division of labor and high-quality output. The project serves as a proof-of-concept for using AI to streamline software development, from high-level design to production-ready code.
+
+## Prerequisites
+
+To run this project, you'll need:
+- Python 3.8+
+- [uv](https://github.com/astral-sh/uv) (a fast Python package and project manager)
+- [Gradio](https://www.gradio.app/) for the web interface
+- A basic understanding of Python and virtual environments
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+1. **Clone the repository**:
+   ```bash
+   git clone 
+   cd the_engineers
+   ```
 
-First, if you haven't already, install uv:
+2. **Set up the virtual environment with uv**:
+   ```bash
+   uv venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
 
-```bash
-pip install uv
+3. **Install dependencies**:
+   ```bash
+   uv pip install gradio
+   ```
+
+4. **Run the application**:
+   ```bash
+   uv run app.py
+   ```
+   This launches the Gradio UI in your browser, where you can interact with the trading account system.
+
+5. **Run the unit tests** (optional):
+   ```bash
+   uv run python test_accounts.py
+   ```
+
+## Project Structure
+
+```plaintext
+trading-account-crewai/
+├── accounts.py          # Backend module with Account class and logic
+├── app.py              # Gradio UI for interacting with the backend
+├── test_accounts.py    # Unit tests for the backend
+├── accounts.py_design.md # Design document by the Engineering Lead
+├── agents.yaml         # CrewAI agent configurations
+└── README.md           # This file
 ```
 
-Next, navigate to your project directory and install the dependencies:
+## Usage
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+1. **Launch the app**:
+   Run `uv run app.py` to start the Gradio interface. It will open in your default browser.
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+2. **Interact with the UI**:
+   - **Create Account**: Enter a username and initial deposit to start.
+   - **Deposit/Withdraw Funds**: Add or remove funds from your account.
+   - **Buy/Sell Shares**: Trade stocks (AAPL, TSLA, GOOGL) with mock prices.
+   - **View Holdings**: Check your current stock holdings.
+   - **Portfolio Value**: See the total value of your cash and stocks.
+   - **Profit/Loss**: Track your financial performance.
+   - **Transactions**: Review your transaction history.
 
-- Modify `src/the_engineers/config/agents.yaml` to define your agents
-- Modify `src/the_engineers/config/tasks.yaml` to define your tasks
-- Modify `src/the_engineers/crew.py` to add your own logic, tools and specific args
-- Modify `src/the_engineers/main.py` to add custom inputs for your agents and tasks
+3. **Run tests**:
+   
 
-## Running the Project
+## Screenshots
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+*Coming soon! 
 
-```bash
-$ crewai run
-```
+## CrewAI Agents
 
-This command initializes the The-Engineers Crew, assembling the agents and assigning them tasks as defined in your configuration.
+The project leverages **CrewAI** to simulate a development team:
+- **Engineering Lead**: Uses `gpt-4o-mini` to create a detailed design (`accounts.py_design.md`).
+- **Backend Engineer**: Uses `grok/grok-3-mini-beta` to implement the `accounts.py` module.
+- **Frontend Engineer**: Uses `grok/grok-3-mini-beta` to build the Gradio UI in `app.py`.
+- **Test Engineer**: Uses `grok/grok-3-mini-beta` to write unit tests in `test_accounts.py`.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+The `agents.yaml` file defines these roles, showcasing how CrewAI orchestrates AI agents to deliver a complete software solution.
 
-## Understanding Your Crew
+## Future Improvements
 
-The The-Engineers Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+- Add real-time stock price integration using an API (e.g., Alpha Vantage).
+- Enhance the Gradio UI with charts for portfolio performance.
+- Expand unit tests to cover edge cases and UI interactions.
+- Deploy the app to a cloud platform for public access.
 
-## Support
+## Contributing
 
-For support, questions, or feedback regarding the TheEngineers Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+Contributions are welcome! Feel free to:
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add YourFeature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
 
-Let's create wonders together with the power and simplicity of crewAI.
-# The_Engineers
+Please ensure your code follows PEP 8 and includes unit tests where applicable.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **CrewAI**: For providing an awesome framework to coordinate AI agents.
+- **Gradio**: For enabling a quick and easy web interface.
+- **xAI**: For powering the Grok-based agents (`grok/grok-3-mini-beta`).
+- **You**: For checking out this project! 🚀
+
+---
+
+Built with ❤️ by Reggie using **CrewAI**. Star this repo if you find it useful!
