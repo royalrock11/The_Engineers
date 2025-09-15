@@ -34,7 +34,7 @@ To run this project, you'll need:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/trading-account-crewai.git
+   git clone 
    cd trading-account-crewai
    ```
 
@@ -134,4 +134,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Built with ❤️ by [Your Name] using **CrewAI**. Star this repo if you find it useful!
+Built with ❤️ by Reggie using **CrewAI**. Star this repo if you find it useful!
