@@ -32,8 +32,8 @@ To run this project, you'll need:
 
 1. **Clone the repository**:
    ```bash
-   git clone 
-   cd the_engineers
+   git clone https://github.com/royalrock11/The_Engineers.git
+   cd The_Engineers
    ```
 
 2. **Set up the virtual environment with uv**:
@@ -61,13 +61,21 @@ To run this project, you'll need:
 ## Project Structure
 
 ```plaintext
-trading-account-crewai/
-├── accounts.py          # Backend module with Account class and logic
-├── app.py              # Gradio UI for interacting with the backend
-├── test_accounts.py    # Unit tests for the backend
-├── accounts.py_design.md # Design document by the Engineering Lead
-├── agents.yaml         # CrewAI agent configurations
-└── README.md           # This file
+The_Engineers/
+├── pyproject.toml       # Project configuration for uv
+├── README.md            # Project documentation
+├── src/
+│   ├── the_engineers/
+│   │   ├── main.py      # CrewAI entry point
+│   │   ├── crew.py      # CrewAI agent definitions
+│   │   ├── config/
+│   │   │   ├── agents.yaml  # Agent configurations
+│   │   │   ├── tasks.yaml   # Task configurations
+│   │   ├── output/
+│   │   │   ├── accounts.py  # Backend module
+│   │   │   ├── app.py       # Gradio UI
+│   │   │   ├── test_accounts.py  # Unit tests
+│   │   │   ├── accounts.py_design.md  # Design document
 ```
 
 ## Usage
@@ -89,7 +97,8 @@ trading-account-crewai/
 
 ## Screenshots
 
-*Coming soon! 
+## Screenshots
+![Gradio UI](screenshots-ui.png)
 
 ## CrewAI Agents
 
